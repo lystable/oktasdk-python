@@ -26,7 +26,7 @@ class UsersClient(ApiClient):
         """
         params = {
             'limit': limit,
-            'query': query,
+            'q': query,
             'filter': filter_string
         }
         response = ApiClient.get_path(self, '/', params=params)
@@ -118,7 +118,7 @@ class UsersClient(ApiClient):
         return PagedResults(response, User)
 
     # LIFECYCLE
-    
+
     def activate_user(self, uid):
         """Activate user by target id
 
